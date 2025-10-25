@@ -87,7 +87,7 @@ body > section {
 
 .right-text > h2 {
   grid-row: 1 span 1;
-  font-size: 3rem;
+  font-size: 2.5rem;
   width: 80%;
   justify-self: center;
   align-self: end;
@@ -123,7 +123,8 @@ body > section {
   place-self: center;
 }
 
-#about-me button {
+#about-me button,
+.interests-showcase > div > button {
   background-color: rgb(46, 46, 46);
   color: whitesmoke;
   padding: 10px 70px;
@@ -148,7 +149,7 @@ body > section {
   width: 250px;
 }
 #portfolio > h2 {
-  font-size: 3rem;
+  font-size: 2.5rem;
 }
 
 .portfolio-showcase > .showcase1 {
@@ -168,9 +169,9 @@ body > section {
   grid-template-rows: 0.5fr 1fr 1fr;
 }
 #resume > h2,
-h3 {
+#resume h3 {
   margin: 10px 0 10px 0;
-  font-size: 3rem;
+  font-size: 2.5rem;
 }
 
 #resume h3 {
@@ -207,7 +208,32 @@ h3 {
 /* SECTION INTERESTS*/
 
 #interests > h2 {
-  font-size: 3rem;
+  font-size: 2.5rem;
+  margin-top: 0px;
+}
+
+.interests-showcase > div > img {
+  width: 300px;
+  height: 250px;
+  object-fit: cover;
+  object-position: center;
+}
+.interests-showcase {
+  display: flex;
+  flex-direction: row;
+  gap: 40px;
+}
+
+.interests-showcase > div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.interests-dog > p {
+  text-align: center;
+}
+.interests-sewing > button {
+  margin-top: 16px;
 }
 
 @media (max-width: 992px) {
@@ -253,6 +279,9 @@ h3 {
     grid-row: 1 / span 1;
     grid-column: 1 / span 1;
   }
+  #resume h3 {
+    font-size: 2rem;
+  }
   .education {
     grid-row: 2 / span 1;
     grid-column: 1 / span 1;
@@ -269,5 +298,10 @@ h3 {
   .skills {
     grid-row: 4 / span 1;
     grid-column: 1 / span 1;
+  }
+
+  .interests-showcase {
+    display: flex;
+    flex-direction: column;
   }
 }
