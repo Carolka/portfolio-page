@@ -62,6 +62,7 @@ body > section {
   grid-row: 1 / span 1;
   grid-column: 1 / span 1;
   place-self: center;
+  align-self: start;
 }
 
 .social-media {
@@ -69,8 +70,8 @@ body > section {
   justify-content: center;
 }
 
-.social-media > img,
-.contact-social img {
+.social-media > a > img,
+.contact-social > a > img {
   width: 30px;
   height: 30px;
   margin: 20px;
@@ -87,10 +88,9 @@ body > section {
 .right-text > h2 {
   grid-row: 1 / span 1;
   font-size: 2.5rem;
-  width: 80%;
-  justify-self: center;
   align-self: end;
   margin-bottom: 0px;
+  padding-left: 50px;
 }
 .right-text > p {
   grid-row: 2 / span 1;
@@ -98,8 +98,8 @@ body > section {
   font-family: "Lato", sans-serif;
   font-size: 1rem;
   line-height: 33px;
-  width: 80%;
-  justify-self: center;
+  text-align: justify;
+  padding-left: 50px;
 }
 
 .right-buttons {
@@ -108,18 +108,19 @@ body > section {
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr;
-  height: 70px;
+  gap: 20px;
+  padding-left: 50px;
 }
 
 .right-buttons > .resume-btn {
   grid-row: 1 / span 1;
   grid-column: 1 / span 1;
-  place-self: center;
+  align-self: start;
 }
 .right-buttons > .portfolio-btn {
   grid-row: 1 / span 1;
   grid-column: 2 / span 1;
-  place-self: center;
+  align-self: start;
 }
 
 #about-me button,
@@ -138,22 +139,21 @@ body > section {
   display: flex;
   flex-direction: row;
   gap: 40px;
+  justify-content: space-between;
 }
 
 .portfolio-showcase > img {
-  width: 250px;
+  max-width: 300px;
+  min-width: 250px;
+  width: 100%;
+  aspect-ratio: 4/4;
 }
+
 #portfolio > h2 {
   font-size: 2.5rem;
 }
 
-.portfolio-showcase > .showcase1 {
-  flex: 1;
-}
-.portfolio-showcase > .showcase2 {
-  flex: 1;
-}
-.portfolio-showcase > .showcase3 {
+.portfolio-showcase > * {
   flex: 1;
 }
 
@@ -213,11 +213,13 @@ body > section {
 }
 
 .interests-showcase > div > img {
-  width: 300px;
-  height: 250px;
+  max-width: 300px;
+  min-width: 250px;
+  width: 100%;
+  aspect-ratio: 4/3;
   object-fit: cover;
-  object-position: center;
 }
+
 .interests-showcase {
   display: flex;
   flex-direction: row;
@@ -226,6 +228,7 @@ body > section {
 }
 
 .interests-showcase > div {
+  flex: 1;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -261,6 +264,7 @@ body > section {
   justify-content: center;
   align-items: center;
 }
+
 #footer {
   grid-row: 2 / span 2;
   grid-column: 1 / span 1;
@@ -289,6 +293,12 @@ body > section {
     grid-row: 3 / span 1;
     grid-column: 1 / span 1;
   }
+  .right-text > h2,
+  .right-text > p,
+  .right-buttons {
+    padding-left: 0;
+  }
+
   .right-buttons {
     grid-row: 4 / span 1;
     grid-column: 1 / span 1;
@@ -319,6 +329,11 @@ body > section {
   #footer {
     grid-row: 2 / span 1;
     grid-column: 1 / span 1;
+  }
+}
+@media (max-width: 776px) {
+  .right-text > p {
+    width: auto;
   }
 }
 
@@ -362,5 +377,26 @@ body > section {
     display: flex;
     flex-direction: column;
     gap: 30px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  .right-buttons > button {
+    width: 100%;
+    padding: 10px 20px;
+    box-sizing: border-box;
+  }
+  .contact-info > h2,
+  .dane > h2,
+  .right-text > h2,
+  #portfolio > h2,
+  #resume > h2,
+  #interests > h2 {
+    text-align: center;
+  }
+}
+
+@media (max-width: 395px) {
+  body > section {
+    padding: 0 0 0;
   }
 }
